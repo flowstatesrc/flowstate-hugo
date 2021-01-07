@@ -1,0 +1,36 @@
+baseURL: https://logjson.com/
+languageCode: en-us
+title: Log JSON
+theme: minimal
+enableGitInfo: true
+enableRobotsTXT: true
+googleAnalytics: UA-142880390-2
+metaDataFormat: yaml
+publishDir: ../docs
+menu:
+  main:
+    - identifier: home
+      name: Home
+      title: Home
+      url: /
+      weight: 1
+    # - identifier: docs
+    #   name: Documentation
+    #   title: Documentation
+    #   url: /documentation/
+    #   weight: 2
+    - identifier: pricing
+      name: Pricing
+      title: Pricing
+      url: /pricing/
+      weight: 3
+    - identifier: faq
+      name: FAQ
+      title: Frequently Asked Questions
+      url: /faq/
+      weight: 4
+#    - identifier: contact
+#      name: Contact
+#      title: Contact Us
+#      url: "#contact"
+#      weight: 5

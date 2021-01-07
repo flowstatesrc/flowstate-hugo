@@ -1,0 +1,7 @@
+.idea/
+.fsw.yml
+private/
+.vscode
+Thumbs.db
+.DS_Store
+hugo-sqldefender/resources/_gen

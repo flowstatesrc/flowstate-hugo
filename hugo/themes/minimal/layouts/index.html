@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	{{ partial "head.gohtml" . }}
+	<body>
+		<div class="page">
+			{{ partial "header.gohtml" . }}
+			<main>
+				<h2 class="f2 tc mt4 mb3">
+					{{ .Params.subtitle }}
+				</h2>
+				<section>
+					<div class="content">
+						<div class="flex flex-wrap flex-nowrap-ns">
+							{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.simple) }}
+							{{ partial "blurb.gohtml" (dict "class" "ml3-ns" "blurb" .Params.blurbs.dashboards) }}
+						</div>
+					</div>
+				</section>
+				<section class="dark blue-gradient mb3">
+					<div class="content">
+						<div>
+							{{ partial "blurb.gohtml" (dict "class" "w-80 mt3 mauto" "blurb" .Params.blurbs.cheaper) }}
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="content">
+						<div class="flex flex-wrap flex-nowrap-ns">
+							{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.custom) }}
+							{{ partial "blurb.gohtml" (dict "class" "ml3-ns" "blurb" .Params.blurbs.alerts) }}
+						</div>
+					</div>
+				</section>
+				{{ partial "signup.gohtml" . }}
+				<section class="dark blue-gradient mb3">
+					<div class="content">
+						<div>
+							{{ partial "blurblist.gohtml" (dict "class" "w-80 mt3 mauto" "blurb" .Params.blurbs.pluses) }}
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="content">
+						<div>
+							{{ partial "blurblist.gohtml" (dict "class" "w-80 mt3 mauto" "blurb" .Params.blurbs.minuses) }}
+						</div>
+					</div>
+				</section>
+				{{ partial "signup.gohtml" . }}
+			</main>
+			{{ partial "footer.gohtml" . }}
+		</div>
+	</body>
+</html>

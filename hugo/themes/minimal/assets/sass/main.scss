@@ -1,0 +1,256 @@
+// Reset Styles
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+summary:focus {
+	outline: none;
+}
+
+// Variables
+
+// Colors
+$yellow-light: #fd0;
+$yellow: #fc0;
+$blue-light: #00f;
+$blue-dark: #003d8b;
+$green-light: #2ebc4f;
+$green-dark:	#28a746;
+$red: red;
+$grey-light: #e6e5e6;
+$grey-dark: #333;
+$logo-font: "Ariel Rounded MT BOLD","Arial BoldMT","Ariel Black",sans-serif;
+$system-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+$shadow-color: rgba(0,0,0,0.41);
+
+// Sizes
+$footer-height: 80px;
+
+// Media queries (these are set to match those in tachyons, if you change these, change both!)
+@mixin large {
+	@media screen and (min-width: 60em) {
+		@content;
+	}
+}
+@mixin medium {
+	@media screen and (min-width: 30em) and (max-width: 60em) {
+		@content;
+	}
+}
+@mixin not-small {
+	@media screen and (min-width: 30em) {
+		@content;
+	}
+}
+@mixin tiny {
+	@media screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+// Styles
+.yellow {
+	color: $yellow;
+}
+.blue-dark {
+	color: $green-light;
+}
+em {
+	text-decoration: underline;
+}
+.logo {
+	font-family: $logo-font;
+	text-shadow: 3px 3px 3px $shadow-color;
+	margin: 0;
+	white-space: nowrap;
+	font-size: 2.25rem;
+	@include tiny {
+		font-size: 34px;
+	}
+	@include not-small {
+		font-size: 3rem;
+	}
+}
+.logo img {
+	vertical-align: middle;
+	width: 64px;
+	height: 64px;
+	@include tiny {
+		width: 48px;
+		height: 48px;		
+	}
+}
+.logo a {
+	text-decoration: none;
+}
+.menu li {
+	display: inline-block;
+	margin-right: 8px;
+	font-weight: 400;
+}
+a, .link {
+	color: $green-light;
+	text-decoration: underline;	
+}
+a:hover, .link:hover {
+	color: $yellow;
+	cursor: pointer;
+}
+.dark a {
+	color: $yellow;
+}
+.dark a:hover {
+	color: white;
+}
+.current, .current:hover {
+	color: inherit;
+	text-decoration: none;
+}
+// Page
+header {
+	border-bottom: 1px solid $grey-light;
+}
+.page {
+	position:relative;
+	min-height:100vh;
+	font-family: $system-font;
+}
+main {
+	padding-bottom: $footer-height;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: $footer-height;
+}
+.content {
+	max-width: 1180px;
+	margin: auto;
+	padding: 16px 8px;
+	@include not-small {
+		padding: 16px;
+	}
+}
+.blue-gradient {
+	background: linear-gradient(
+		$green-light, #1f7a34);
+}
+.grey-section {
+	background: $grey-light;
+}
+// Header
+
+// Forms
+input, textarea {
+	padding: 8px;
+}
+button {
+	background-color: $yellow;
+	color: black;
+	font-weight: 500;
+	padding: 8px;
+	border: 1px solid $yellow;
+	border-radius: 4px;
+}
+button:hover {
+	box-shadow:0 0 0 0.2em rgba(230, 227, 55, 0.3);
+	background-color: $yellow-light;
+	border-color: $yellow-light;
+}
+// Blurb
+.blurb h3, summary {
+	margin-bottom: 16px;
+	color: $green-dark;
+	font-size: 20px;
+	@include not-small {
+		font-size: 24px;	
+	}
+}
+.blurb p, .blurb li, details {
+	font-size: 14px;
+	line-height: 20px;
+	@include not-small {
+		font-size: 18px;
+		line-height: 28px;	
+	}
+}
+.blurb img {
+	width: 96px;
+	height: 96px;
+	margin-right: 12px;
+	float: left;
+}
+.dark .blurb h3 {
+	color: $yellow;
+}
+.dark .blurb p, .dark .blurb li {
+	color: white;
+}
+.mauto {
+	margin: auto;
+}
+.blurb.mauto h3 {
+	text-align: center;
+}
+.blurb li {
+	list-style: disc;
+	padding: 2px 0;
+}
+// FAQ
+summary {
+	cursor: pointer;
+}
+summary:focus {
+	text-decoration: underline;
+}
+details h4 {
+	margin: 8px 0;
+	font-size: 18px;
+	@include not-small {
+		font-size: 22px;
+	}
+}
+
+// Tachyons
+@import "../lib/css/tachyons.min"
+// Debug borders (comment/uncomment as needed) helpful paired with the "Dimensions" Chrome extensions
+//	, "../lib/css/debug/pesticide.scss"

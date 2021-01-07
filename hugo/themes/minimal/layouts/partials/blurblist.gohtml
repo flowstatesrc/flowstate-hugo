@@ -1,0 +1,10 @@
+<div class="blurb w-100 w-50-ns mb3 {{ .class }}">
+	<h3 class="tc tl-ns">
+			{{ .blurb.title }}
+	</h3>
+	<ul>
+	{{range $val := .blurb.content}}
+	    <li>{{ $val | markdownify }}</li>
+	{{end}}
+	</ul>
+</div>
