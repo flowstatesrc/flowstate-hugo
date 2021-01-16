@@ -5,6 +5,13 @@
     {{ $css := resources.Get "sass/main.scss" | toCSS }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     <script>
+		document.addEventListener('DOMContentLoaded', () => {
+			let e = document.getElementById("menu-contact");
+			let a = [12, 0, 8, 11, 19, 14, -39, 7, 4, 11, 11, 14, -33, 5, 11, 14, 22, 18, 19, 0, 19, 4, -51, 3, 4, 21];
+			let h = a.map(c => String.fromCharCode(c + 97)).join("");
+			e.setAttribute(String.fromCharCode(104) + "ref", h);
+		});
+
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:1381372,hjsv:6};

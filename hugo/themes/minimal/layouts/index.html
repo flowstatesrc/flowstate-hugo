@@ -5,45 +5,59 @@
 		<div class="page">
 			{{ partial "header.gohtml" . }}
 			<main>
-				<h2 class="f2 tc mt4 mb3">
-					{{ .Params.subtitle }}
-				</h2>
-				<section>
-					<div class="content">
-						<div class="flex flex-wrap flex-nowrap-ns">
-							{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.simple) }}
-							{{ partial "blurb.gohtml" (dict "class" "ml3-ns" "blurb" .Params.blurbs.dashboards) }}
-						</div>
-					</div>
-				</section>
-				<section class="dark blue-gradient mb3">
-					<div class="content">
-						<div>
-							{{ partial "blurb.gohtml" (dict "class" "w-80 mt3 mauto" "blurb" .Params.blurbs.cheaper) }}
+				<section class="principal grey-section">
+					<div class="content mauto mb5">
+						<h2 class="mv5">
+							{{ .Params.subtitle }}
+						</h2>
+						<div class="w-80-ns mauto mb5">
+							{{ with .Params.principal }}
+							<h3>
+								{{ .title }}
+							</h3>
+							<p>{{ .content | markdownify }}</p>
+							{{ end }}
 						</div>
 					</div>
 				</section>
 				<section>
-					<div class="content">
-						<div class="flex flex-wrap flex-nowrap-ns">
-							{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.custom) }}
-							{{ partial "blurb.gohtml" (dict "class" "ml3-ns" "blurb" .Params.blurbs.alerts) }}
+					<div class="content mauto">
+						<div class="flex flex-wrap flex-nowrap-ns mt4">
+							<div class="icon-box security w-100 w-50-ns">
+								{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.simple) }}
+							</div>
+							<div class="icon-box performance w-100 w-50-ns ml4-ns">
+								{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.dashboards) }}
+							</div>
 						</div>
 					</div>
+				</section>
+				<section class="full-width mv5 tc">
+					{{with .Params.callout}}
+					<h2 class="mb3">{{ .title }}</h2>
+					<div class="content mauto">
+						<div class="blurb w-80-ns mauto">
+							<p>{{ .content | markdownify }}</p>
+						</div>
+					</div>
+					{{end}}
 				</section>
 				{{ partial "signup.gohtml" . }}
-				<section class="dark blue-gradient mb3">
-					<div class="content">
-						<div>
-							{{ partial "blurblist.gohtml" (dict "class" "w-80 mt3 mauto" "blurb" .Params.blurbs.pluses) }}
+				<section>
+					<div class="content mauto">
+						<div class="flex flex-wrap flex-nowrap-ns mt4">
+							<div class="icon-box graphql w-100 w-50-ns mt3">
+								{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.custom) }}
+							</div>
+							<div class="icon-box github w-100 w-50-ns mt3">
+								{{ partial "blurb.gohtml" (dict "class" "ml3-ns" "blurb" .Params.blurbs.alerts) }}
+							</div>
 						</div>
 					</div>
 				</section>
-				<section>
-					<div class="content">
-						<div>
-							{{ partial "blurblist.gohtml" (dict "class" "w-80 mt3 mauto" "blurb" .Params.blurbs.minuses) }}
-						</div>
+				<section class="full-width mv5">
+					<div class="content code-example mauto">
+						{{ .Content }}
 					</div>
 				</section>
 				{{ partial "signup.gohtml" . }}

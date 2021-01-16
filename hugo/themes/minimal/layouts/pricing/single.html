@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	{{ partial "head.gohtml" . }}
+	<body>
+		<div class="page grey-section pricing">
+			{{ partial "header.gohtml" . }}
+			<main>
+				<div class="content mauto">
+					<h1 class="tc f2 mv5">90-day free trial <a href="#signup">signup</a></h1>
+					<h2 class="tc f3 mb2">{{ .Params.roi }}</h2>
+					<small class="db tc mb5">based on the fully-loaded (including benefits etc) cost of a developer making $9K/month average salary</small>
+					<div class="flex flex-wrap flex-nowrap-l">
+						{{ range $plan := .Params.plans }}
+							{{ partial "plan.gohtml" $plan }}
+						{{ end }}
+					</div>
+				</div>
+			</main>
+			{{ partial "signup.gohtml" }}
+			{{ partial "footer.gohtml" . }}
+		</div>
+	</body>
+</html>

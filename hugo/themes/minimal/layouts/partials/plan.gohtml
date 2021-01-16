@@ -1,0 +1,35 @@
+<ul class="plan w-25 {{ .name | anchorize }}">
+    <li><h3 class="tc pv3">{{ .name }}</h3></li>
+    <li class="price">
+        <h4 class="tc f3 pt3">
+            {{ if .price }}
+            <span class="f2">{{ .price }}</span>
+            <sup>/ dev / month</sup>
+
+            <small class="db mt3">
+                {{ if ne .name "Starter" }}
+                with 15% annual discount
+                {{ else }}
+                forever
+                {{ end }}
+            </small>
+            {{ else }}
+            <a class="f2" href="/contact">Contact Us</a>
+            <small class="db mt3">to discuss features and price</small>
+            {{ end }}
+        </h4>
+    </li>
+    <li class="mh2 mv3 pb3">
+        <h5>
+            <span class="label">Developers:</span>
+            <span class="value">{{ .developers }}</span>
+        </h5>
+    </li>
+    {{ range .features }}
+        <li class="mh2 mv3 pb3">
+            <span class="label">{{ .label }}:</span>
+            <span class="value">{{ .value }}</span>
+        </li>
+    {{ end }}
+    {{ if ne .name "Business" }}<li class="mh2 mv3 pb3">All Business Features</li>{{ end }}
+</ul>

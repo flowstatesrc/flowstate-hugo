@@ -2,14 +2,14 @@
 <html lang="en">
 	{{ partial "head.gohtml" . }}
 	<body>
-		<div class="page">
+		<div class="page grey-section faq">
 			{{ partial "header.gohtml" . }}
 			<main>
-				<div class="content">
+				<div class="content mauto">
 					<div class="flex flex-wrap">
 						{{ range $section := .Params.sections }}
 							<section class="w-50-ns pr3">
-								<h3 class="mv3 f3 f2-ns">{{ $section | title }}</h3>
+								<h3 class="mv3 f3 f2-ns tl">{{ $section | title }}</h3>
 								{{ range index $.Params.faq $section }}
 									{{ partial "question.gohtml" . }}
 								{{ end }}

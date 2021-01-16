@@ -1,12 +1,15 @@
 baseURL: https://logjson.com/
 languageCode: en-us
-title: Log JSON
+title: Flow State API Framework
 theme: minimal
 enableGitInfo: true
 enableRobotsTXT: true
 googleAnalytics: UA-142880390-2
 metaDataFormat: yaml
 publishDir: ../docs
+pygmentsUseClasses: true
+pygmentsCodefences: true
+pygmentsCodeFencesGuessSyntax: true
 menu:
   main:
     - identifier: home
@@ -29,8 +32,13 @@ menu:
       title: Frequently Asked Questions
       url: /faq/
       weight: 4
-#    - identifier: contact
-#      name: Contact
-#      title: Contact Us
-#      url: "#contact"
-#      weight: 5
+    - identifier: contact
+      name: Contact
+      title: Contact Us
+      url: "#signup"
+      weight: 5
+    - identifier: github
+      name: " "
+      title: GitHub Source Code
+      url: "https://github.com/flowstatesrc/flowstate"
+      weight: 6
