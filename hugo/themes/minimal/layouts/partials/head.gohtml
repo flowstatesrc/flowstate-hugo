@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     <script>
 		document.addEventListener('DOMContentLoaded', () => {
+			if (window.LogRocket) {
+				window.LogRocket.init("flow-state/flow-state");
+            }
 			let e = document.getElementById("menu-contact");
 			let a = [12, 0, 8, 11, 19, 14, -39, 7, 4, 11, 11, 14, -33, 5, 11, 14, 22, 18, 19, 0, 19, 4, -51, 3, 4, 21];
 			let h = a.map(c => String.fromCharCode(c + 97)).join("");
@@ -21,5 +24,5 @@
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-    {{ template "_internal/google_analytics_async.html" . }}
+    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
 </head>

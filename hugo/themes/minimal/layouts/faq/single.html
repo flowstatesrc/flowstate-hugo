@@ -7,13 +7,17 @@
 			<main>
 				<div class="content mauto">
 					<div class="flex flex-wrap">
-						{{ range $section := .Params.sections }}
-							<section class="w-50-ns pr3">
-								<h3 class="mv3 f3 f2-ns tl">{{ $section | title }}</h3>
+						{{ range $col := .Params.columns }}
+						<div class="w-100 w-50-ns pr3">
+							{{ range $section := $col }}
+							<section>
+								<h3 class="mv4 f3 f2-ns tl">{{ $section | title }}</h3>
 								{{ range index $.Params.faq $section }}
 									{{ partial "question.gohtml" . }}
 								{{ end }}
 							</section>
+							{{ end }}
+						</div>
 						{{ end }}
 					</div>
 				</div>

@@ -2,28 +2,39 @@
 type: faq
 breadcrumb: FAQ
 subtitle: Frequently Asked Questions
-sections:
-  - general
-  - security  
-  - billing
-  - how do i?
-  - performance & scaling  
-  - logging & metrics
-  - compatibility
+columns:
+  -
+    - general
+    - security  
+    - billing
+  -    
+    - how do i?
+    - performance & scaling  
+    - logging & metrics
+    - compatibility
   
 faq:
   general:
     - question: Is Flow State open-source?
-      answer: "The compiler and client libraries are Apache 2 licensed. The admin UI is source-visible. The server is not open-source. OSI open-source licenses are not suitable because they don't protect us from the big cloud companies who would just host Flow State as a service and pay us nothing for it. We will likely adopt a modified open-source license like the Timescale License."
-    - question: Won't this couple the frontend to the db schema?
-      answer: "Most REST/GraphQL APIs track the schema pretty closely. If you change the schema later, you need to update the query and possibly also the code that uses it if the attributes change. That's exactly what you'd do with a conventional backend, except here it's the frontend that needs to be updated. You also have the option of keeping the API unchanged by adding a backward compatible view to your database - again nothing new here. However, if you expose your API to third parties, then you should use the RPC-style call interface which translates to a conventional REST API. For a third-party API you must have much stronger backward compatibility, so having that intermediate layer is beneficial."
-    - question: If I change the schema won't that break the client?
-      answer: "Schema changes can be backward compatible or not. Even when they're not backwards compatible you can define a view that makes it backward compatible. However, if you do wish to make a breaking change you declare that in the breaking migration or the config file and any older incompatible clients will be forced to update (by refreshing the browser.) This gives you full flexibility to manage the distributed system consisting of the frontend and backend components."
+      answer: "The compiler and client libraries are Apache 2 licensed.
+        The server is not open-source. OSI open-source licenses are not suitable because they
+        don't protect us from the big cloud companies who would just host Flow State as a 
+        service and strangle us to death with our own product. We want our users to be able
+        to dig into the source code if the documentation is lacking, or patch/modify the product
+        to better suit their needs. So we will definitely release the source code under some kind
+        of source visible license with a right to repair in the near future."
+    - question: What happens if Flow State goes under or gets acquired?
+      answer: We're not a venture funded company, we're a private company run in a sustainable way. We're not going anywhere.
+        However, as guarantee of business continuity we're making you a legally binding promise that
+        if the company permanently halts development on the product for any reason, including
+        bankruptcy, or the product being shutdown by an acquiring company, or anything you can think of - then
+        all of the latest source code will be published under the Apache 2 license. We would include this
+        as a non-negotiable contract term if we were ever acquired. That being said, we're not interested in selling the company.
     - question: What do I do with my backend engineers?
       answer: "Don't fire them, retrain them. Toyota famously put people to work painting their factories rather than let them go. #LearnToPaint.
 
       
-      Please don't take umbrage with my sense of humor, the reality is nobody yet has a magic wand to make backend code go away, only some of the boilerplate does. You want all of your engineers to be more comfortable with the full stack with Flow State so they can contribute where needed and understand the whole picture. You'll still want to assign your best backend people to the trickier queries and backend logic, and the best frontend people to the harder UI work. It's important to have them on the same team, working out of the same repo, deploying as one - this will really cut down on the amount of time wasted in communication and context switching compared to a siloed organization." 
+      Don't mind my sense of humor, the reality is nobody yet has a magic wand to make backend code go away, only some of the boilerplate does. You want all of your engineers to be more comfortable with the full stack with Flow State so they can contribute where needed and understand the whole picture. You'll still want to assign your best backend people to the trickier queries and backend logic, and the best frontend people to the harder UI work. It's important to have them on the same team, working out of the same repo, deploying as one - this will really cut down on the amount of time wasted in communication and context switching compared to a siloed organization." 
   security:    
     - question: How is it secure to run SQL from the browser?
       answer: "We only allow arbitrary queries in development. In production, the SQL query is compiled to the backend and referenced with a hash, it's not public and only queries you've explicitly coded can run - no different from any other REST or GraphQL API."
@@ -47,16 +58,19 @@ faq:
     - question: We don't have new feature development anymore, do we still have to pay?
       answer: Pricing is by active developers per month, if there are less than 3 active developers in a given month, there is no charge for that month.
     - question: What if we have fewer/more developers some months
-      answer: We bill automatically based on the number of active committers in your VCS repository.
+      answer: We bill automatically based on the number of active committers in your VCS repository. An active committer is an individual VCS user who makes more than one non-trivial commit per-month.
     - question: What if we don't use a VCS?
       answer: Now you have two problems.
-    - question: Do you offer an SLA?
-      answer: "Yes, on the enterprise plan, please contact us to learn more."
-    - question: Do you offer training?
-      answer: "Yes, please contact us to learn more."
+    - question: We make some automated commits to our VCS, do we need to pay for that?
+      answer: Currently you can contact us to have NPCs ignored for billing purposes.
   logging & metrics:
     - question: What data is logged?
-      answer: "By default we log requests, responses, queries and subrequests (fetch) to an S3-compatible cloud object storage. You can control what gets logged trough the various configuration settings. See the docs on configuration for more details. We also track some basic details about each request in your database, this can also be disabled or routed to a different database. These logs are your data, in your systems, you own and control it fully."
+      answer: "By default we log requests, responses, queries and subrequests (fetch) to _your_ S3-compatible cloud object storage. You can control what gets logged trough the various configuration settings. See the docs on configuration for more details. We also track some basic details about each request in your database, this can also be disabled or routed to a different database. These logs are your data, in your systems, you own and control it fully."
     - question: What data do you send to your servers?
       answer: "By default we track some anonymous usage statistics to help guide us in improving Flow State. You can disable this in the configuration. We also track unique monthly committers, this is for automatic license enforcement, and it can only be disabled on the enterprise plan."
+  how do I?:
+    - question: If I change the schema won't that break the client?
+      answer: "Schema changes can be backward compatible or not. Even when they're not backwards compatible you can define a view that makes it backward compatible. However, if you do wish to make a breaking change you declare that in the breaking migration or the config file and any older incompatible clients will be forced to update (by refreshing the browser.) This gives you full flexibility to manage the distributed system consisting of the frontend and backend components."
+    - question: Won't this couple the frontend to the db schema?
+      answer: "Most REST/GraphQL APIs track the schema pretty closely. If you change the schema later, you need to update the query and possibly also the code that uses it if the attributes change. That's exactly what you'd do with a conventional backend, except here it's the frontend that needs to be updated. You also have the option of keeping the API unchanged by adding a backward compatible view to your database - again nothing new here. However, if you expose your API to third parties, then you should use the RPC-style call interface which translates to a conventional REST API. For a third-party API you must have much stronger backward compatibility, so having that intermediate layer is beneficial."
 ---

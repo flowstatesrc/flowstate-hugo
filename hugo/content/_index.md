@@ -3,19 +3,21 @@ breadcrumb: Home
 subtitle: Develop Faster
 principal:
   title: Flow State is a framework for building backend APIs using SQL and JavaScript
-  content: Query your PostgreSQL database directly from the frontend, write the validation, auth, and business logic alongside the frontend code which invokes it. 
+  content: Query your PostgreSQL database directly from the frontend, write the validation, auth, and business logic alongside the frontend code which invokes it.   
+    
     - __FREE for teams of up to 3 developers. 90-day no credit card free trial.__ 
-    - Your code can run on the frontend, backend, or both - it's all JavaScript. 
     
-    - API code is more accessible and readable to frontend devs, leading to fewer bugs.
+    - Your code can run on the frontend, backend, or both - it's all JavaScript.   
     
-    - Write SQL queries in the frontend returning JSON - save time and reduce boilerplate.
+    - API code is more accessible and readable to frontend devs, leading to fewer bugs.  
     
-    - _Never get blocked waiting for the backend team_ to make changes. Eliminate bottlenecks.
-
-    - Add Flow State incrementally to any PostgreSQL project, with any JavaScript framework.
-
-    - Does your laundry. No, we made that up. But if you use it in a smart-washer let us know!
+    - Write SQL queries in the frontend returning JSON - save time and reduce boilerplate.  
+    
+    - _Never get blocked waiting for the backend team_ to make changes. Eliminate bottlenecks.  
+    
+    - Add Flow State incrementally to any PostgreSQL project, with any JavaScript framework.  
+    
+    - Does your laundry. No, we made that up. But if you use it in a smart-washer let us know!  
 callout:
     title: Less meetings and organizational overhead
     content: "
