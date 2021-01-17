@@ -2,7 +2,8 @@
 type: pricing
 breadcrumb: Pricing
 subtitle: Pricing Plans
-roi: "If Flow State saves only 1 hour / month per developer, that's a positive return on investment!"
+roi: If Flow State saves only 1 hour / month / developer, that's a positive return on investment!
+roiSmall: based on the fully-loaded (including benefits, office, etc) cost of a developer making $9K/month average salary
 plans:
   - name: Starter
     price: $0

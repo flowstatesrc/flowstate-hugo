@@ -1,4 +1,4 @@
-<ul class="plan w-25 {{ .name | anchorize }}">
+<ul class="plan w-100 w-25-ns {{ .name | anchorize }}">
     <li><h3 class="tc pv3">{{ .name }}</h3></li>
     <li class="price">
         <h4 class="tc f3 pt3">
@@ -14,7 +14,7 @@
                 {{ end }}
             </small>
             {{ else }}
-            <a class="f2" href="/contact">Contact Us</a>
+            <a id="pricing-contact" class="f2" href="#signup">Contact Us</a>
             <small class="db mt3">to discuss features and price</small>
             {{ end }}
         </h4>

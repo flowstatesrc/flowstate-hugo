@@ -58,16 +58,16 @@ faq:
     - question: We don't have new feature development anymore, do we still have to pay?
       answer: Pricing is by active developers per month, if there are less than 3 active developers in a given month, there is no charge for that month.
     - question: What if we have fewer/more developers some months
-      answer: We bill automatically based on the number of active committers in your VCS repository. An active committer is an individual VCS user who makes more than one non-trivial commit per-month.
+      answer: We bill automatically based on the number of active committers in your VCS repository. An active committer is an individual VCS user who makes more than one non-trivial commit per-month. When you pay for a year in advance, we credit your account by 12 times the monthly rate, and then debit that balance each month according to usage - so it may last you more or less than a year. 
     - question: What if we don't use a VCS?
       answer: Now you have two problems.
     - question: We make some automated commits to our VCS, do we need to pay for that?
       answer: Currently you can contact us to have NPCs ignored for billing purposes.
   logging & metrics:
-    - question: What data is logged?
-      answer: "By default we log requests, responses, queries and subrequests (fetch) to _your_ S3-compatible cloud object storage. You can control what gets logged trough the various configuration settings. See the docs on configuration for more details. We also track some basic details about each request in your database, this can also be disabled or routed to a different database. These logs are your data, in your systems, you own and control it fully."
+    - question: What request data is logged?
+      answer: "By default Flow State logs requests, responses, queries and subrequests (fetch) to _your_ S3-compatible cloud object storage. You can control what gets logged trough the various configuration settings. See the docs on configuration for more details. We also track some basic details about each request in your database, this can also be disabled or routed to a different database. These logs are your data, in your systems, you own and control it fully - this is never sent to our systems or used by us."
     - question: What data do you send to your servers?
-      answer: "By default we track some anonymous usage statistics to help guide us in improving Flow State. You can disable this in the configuration. We also track unique monthly committers, this is for automatic license enforcement, and it can only be disabled on the enterprise plan."
+      answer: "By default we track some anonymous usage statistics to help guide us in improving Flow State. You can disable this in the configuration. We also track unique monthly committers, this is for automatic license pricing, and it can only be disabled on the enterprise plan."
   how do I?:
     - question: If I change the schema won't that break the client?
       answer: "Schema changes can be backward compatible or not. Even when they're not backwards compatible you can define a view that makes it backward compatible. However, if you do wish to make a breaking change you declare that in the breaking migration or the config file and any older incompatible clients will be forced to update (by refreshing the browser.) This gives you full flexibility to manage the distributed system consisting of the frontend and backend components."

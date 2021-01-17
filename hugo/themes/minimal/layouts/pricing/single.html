@@ -6,17 +6,17 @@
 			{{ partial "header.gohtml" . }}
 			<main>
 				<div class="content mauto">
-					<h1 class="tc f2 mv5">90-day free trial <a href="#signup">signup</a></h1>
-					<h2 class="tc f3 mb2">{{ .Params.roi }}</h2>
-					<small class="db tc mb5">based on the fully-loaded (including benefits etc) cost of a developer making $9K/month average salary</small>
+					<h1 class="tc f2 lh-title mv4 mv5-ns">90-day free trial <a href="javascript:document.getElementById('signup-email').focus()">signup</a></h1>
+					<h2 class="tc f3 lh-title mb2">{{ .Params.roi }}</h2>
+					<small class="db tc mb4 mb5-ns">{{ .Params.roiSmall }}</small>
 					<div class="flex flex-wrap flex-nowrap-l">
 						{{ range $plan := .Params.plans }}
 							{{ partial "plan.gohtml" $plan }}
 						{{ end }}
 					</div>
 				</div>
+				{{ partial "signup.gohtml" }}
 			</main>
-			{{ partial "signup.gohtml" }}
 			{{ partial "footer.gohtml" . }}
 		</div>
 	</body>

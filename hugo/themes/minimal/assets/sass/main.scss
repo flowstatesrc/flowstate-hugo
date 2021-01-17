@@ -170,7 +170,8 @@ footer {
 	box-shadow: 0 30px 50px rgba(0,0,0,.2);
 }
 main {
-	padding-bottom: $footer-height;
+	// TODO why did we have this?
+	//padding-bottom: $footer-height;
 }
 footer {
 	position: absolute;
@@ -236,6 +237,12 @@ nav li:last-child a {
 // Forms
 input, textarea {
 	padding: 8px;
+}
+.signup form {
+	border: 1px solid transparent;
+}
+.signup form:focus-within {
+	border: 1px solid $orange;
 }
 button {
 	background-color: $blue;
@@ -370,10 +377,6 @@ details p {
 	transition: all 1s;
 	margin-top: 30px;
 }
-.plan:hover {
-	margin-top: 0;
-	padding-bottom: 30px;
-}
 .plan li:first-child {
 	background: linear-gradient($grey-light, #474747);
 	border-color: $grey-dark;
@@ -391,11 +394,23 @@ details p {
 .pricing ul:nth-child(even) .price {
 	background: $orange;
 }
-.pricing ul:nth-child(odd):hover .price {
-	background: lighten($blue, 10%);
-}
-.pricing ul:nth-child(even):hover .price {
-	background: lighten($orange, 10%);
+@include not-small {
+	.plan:hover {
+		margin-top: 0;
+		padding-bottom: 30px;
+	}
+	.pricing ul:nth-child(odd):hover .price {
+		background: lighten($blue, 10%);
+	}
+	.pricing ul:nth-child(even):hover .price {
+		background: lighten($orange, 10%);
+	}
+	.business {
+		box-shadow: 0 5px 25px rgba(0,0,0,.2);
+		z-index: 2;
+		margin-top: 15px;
+		padding-bottom: 15px;
+	}
 }
 .price a {
 	color: #fff;
@@ -406,12 +421,7 @@ details p {
 .pricing .label {
 	font-weight: bold;
 }
-.business {
-	box-shadow: 0 5px 25px rgba(0,0,0,.2);
-	z-index: 2;
-	margin-top: 15px;
-	padding-bottom: 15px;
-}
+
 
 // Monokai theme for code highlighting: hugo gen chromastyles --style=monokai
 /* Background */ .chroma { color: #f8f8f2; background-color: #272822 }
