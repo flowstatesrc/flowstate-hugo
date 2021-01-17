@@ -11,10 +11,15 @@
 			if (window.LogRocket) {
 				window.LogRocket.init("flow-state/flow-state");
             }
-			let e = document.getElementById("menu-contact");
-			let a = [12, 0, 8, 11, 19, 14, -39, 7, 4, 11, 11, 14, -33, 5, 11, 14, 22, 18, 19, 0, 19, 4, -51, 3, 4, 21];
-			let h = a.map(c => String.fromCharCode(c + 97)).join("");
-			e.setAttribute(String.fromCharCode(104) + "ref", h);
+			const ids = ["menu-contact", "pricing-contact"];
+			for (let i=0; i < ids.length; i++) {
+				let e = document.getElementById(ids[i]);
+				if (e != null) {
+					let a = [12, 0, 8, 11, 19, 14, -39, 7, 4, 11, 11, 14, -33, 5, 11, 14, 22, 18, 19, 0, 19, 4, -51, 3, 4, 21];
+					let h = a.map(c => String.fromCharCode(c + 97)).join("");
+					e.setAttribute(String.fromCharCode(104) + "ref", h);
+				}
+			}
 		});
 
         (function(h,o,t,j,a,r){
@@ -150,7 +155,7 @@
 								
 									<details class="f3">
 	<summary class="mv3 tl">What if we have fewer/more developers some months</summary>
-	We bill automatically based on the number of active committers in your VCS repository. An active committer is an individual VCS user who makes more than one non-trivial commit per-month.
+	We bill automatically based on the number of active committers in your VCS repository. An active committer is an individual VCS user who makes more than one non-trivial commit per-month. When you pay for a year in advance, we credit your account by 12 times the monthly rate, and then debit that balance each month according to usage - so it may last you more or less than a year.
 </details>
 								
 									<details class="f3">
@@ -198,13 +203,13 @@
 								<h3 class="mv4 f3 f2-ns tl">Logging &amp; Metrics</h3>
 								
 									<details class="f3">
-	<summary class="mv3 tl">What data is logged?</summary>
-	By default we log requests, responses, queries and subrequests (fetch) to <em>your</em> S3-compatible cloud object storage. You can control what gets logged trough the various configuration settings. See the docs on configuration for more details. We also track some basic details about each request in your database, this can also be disabled or routed to a different database. These logs are your data, in your systems, you own and control it fully.
+	<summary class="mv3 tl">What request data is logged?</summary>
+	By default Flow State logs requests, responses, queries and subrequests (fetch) to <em>your</em> S3-compatible cloud object storage. You can control what gets logged trough the various configuration settings. See the docs on configuration for more details. We also track some basic details about each request in your database, this can also be disabled or routed to a different database. These logs are your data, in your systems, you own and control it fully - this is never sent to our systems or used by us.
 </details>
 								
 									<details class="f3">
 	<summary class="mv3 tl">What data do you send to your servers?</summary>
-	By default we track some anonymous usage statistics to help guide us in improving Flow State. You can disable this in the configuration. We also track unique monthly committers, this is for automatic license enforcement, and it can only be disabled on the enterprise plan.
+	By default we track some anonymous usage statistics to help guide us in improving Flow State. You can disable this in the configuration. We also track unique monthly committers, this is for automatic license pricing, and it can only be disabled on the enterprise plan.
 </details>
 								
 							</section>

@@ -5572,9 +5572,6 @@ footer {
   margin: auto;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2); }
 
-main {
-  padding-bottom: 80px; }
-
 footer {
   position: absolute;
   bottom: 0;
@@ -5634,6 +5631,12 @@ nav li:last-child a {
 
 input, textarea {
   padding: 8px; }
+
+.signup form {
+  border: 1px solid transparent; }
+
+.signup form:focus-within {
+  border: 1px solid #f79e02; }
 
 button {
   background-color: #1b9ce5;
@@ -5760,10 +5763,6 @@ details p {
   transition: all 1s;
   margin-top: 30px; }
 
-.plan:hover {
-  margin-top: 0;
-  padding-bottom: 30px; }
-
 .plan li:first-child {
   background: linear-gradient(#747474, #474747);
   border-color: #373737; }
@@ -5781,11 +5780,19 @@ details p {
 .pricing ul:nth-child(even) .price {
   background: #f79e02; }
 
-.pricing ul:nth-child(odd):hover .price {
-  background: #49b0ea; }
-
-.pricing ul:nth-child(even):hover .price {
-  background: #fdb22f; }
+@media screen and (min-width: 30em) {
+  .plan:hover {
+    margin-top: 0;
+    padding-bottom: 30px; }
+  .pricing ul:nth-child(odd):hover .price {
+    background: #49b0ea; }
+  .pricing ul:nth-child(even):hover .price {
+    background: #fdb22f; }
+  .business {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    margin-top: 15px;
+    padding-bottom: 15px; } }
 
 .price a {
   color: #fff; }
@@ -5795,12 +5802,6 @@ details p {
 
 .pricing .label {
   font-weight: bold; }
-
-.business {
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-  margin-top: 15px;
-  padding-bottom: 15px; }
 
 /* Background */
 .chroma {
