@@ -7,11 +7,7 @@
     
     <link rel="stylesheet" href="/sass/main.css">
     <script>
-        const isLocal = window.location.host.indexOf("flowstate.dev") < 0;
 		document.addEventListener('DOMContentLoaded', () => {
-			if (window.LogRocket && !isLocal) {
-				window.LogRocket.init("flow-state/flow-state");
-            }
 			const ids = ["menu-contact", "pricing-contact"];
 			for (let i=0; i < ids.length; i++) {
 				let e = document.getElementById(ids[i]);
