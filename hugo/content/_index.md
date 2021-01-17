@@ -21,7 +21,7 @@ principal:
 callout:
     title: Less meetings and organizational overhead
     content: "
-        ![Reduce communication and meeting overhead](images/bad-meeting.jpg)
+        ![Reduce communication and meeting overhead](/images/bad-meeting.webp)
         Companies with separate frontend and backend roles have to cope with the special organizational
         hell which inspired us to create Flow State. The divided team structure has a high communication
         and context switching overhead. Flow State could realistically double the team velocity and reduce defects.
