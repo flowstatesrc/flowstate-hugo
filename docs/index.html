@@ -8,8 +8,9 @@
     
     <link rel="stylesheet" href="/sass/main.css">
     <script>
+        const isLocal = window.location.host.indexOf("flowstate.dev") < 0;
 		document.addEventListener('DOMContentLoaded', () => {
-			if (window.LogRocket) {
+			if (window.LogRocket && !isLocal) {
 				window.LogRocket.init("flow-state/flow-state");
             }
 			const ids = ["menu-contact", "pricing-contact"];
@@ -23,16 +24,13 @@
 			}
 		});
 
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1381372,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        window.hj = function () {
+            (window.hj.q = window.hj.q || []).push(arguments)
+        };
+        window._hjSettings = {hjid: 1381372, hjsv: 6};
     </script>
-    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script src="/js/1.js" defer></script>
+    <script src="/js/2.js" defer></script>
 </head>
 	<body>
 		<div class="page">
@@ -141,7 +139,7 @@
 					<h2 class="mb3">Less meetings and organizational overhead</h2>
 					<div class="content mauto">
 						<div class="blurb w-80-ns mauto">
-							<p><img src="images/bad-meeting.jpg" alt="Reduce communication and meeting overhead"> Companies with separate frontend and backend roles have to cope with the special organizational hell which inspired us to create Flow State. The divided team structure has a high communication and context switching overhead. Flow State could realistically double the team velocity and reduce defects. No more tasks blocked for days waiting for the backend team to make changes. Unify your team and empower your developers.</p>
+							<p><img src="/images/bad-meeting.webp" alt="Reduce communication and meeting overhead"> Companies with separate frontend and backend roles have to cope with the special organizational hell which inspired us to create Flow State. The divided team structure has a high communication and context switching overhead. Flow State could realistically double the team velocity and reduce defects. No more tasks blocked for days waiting for the backend team to make changes. Unify your team and empower your developers.</p>
 						</div>
 					</div>
 					

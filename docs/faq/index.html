@@ -7,8 +7,9 @@
     
     <link rel="stylesheet" href="/sass/main.css">
     <script>
+        const isLocal = window.location.host.indexOf("flowstate.dev") < 0;
 		document.addEventListener('DOMContentLoaded', () => {
-			if (window.LogRocket) {
+			if (window.LogRocket && !isLocal) {
 				window.LogRocket.init("flow-state/flow-state");
             }
 			const ids = ["menu-contact", "pricing-contact"];
@@ -22,16 +23,13 @@
 			}
 		});
 
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1381372,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        window.hj = function () {
+            (window.hj.q = window.hj.q || []).push(arguments)
+        };
+        window._hjSettings = {hjid: 1381372, hjsv: 6};
     </script>
-    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script src="/js/1.js" defer></script>
+    <script src="/js/2.js" defer></script>
 </head>
 	<body>
 		<div class="page grey-section faq">
