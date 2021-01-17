@@ -5616,9 +5616,10 @@ footer {
   margin-right: auto; }
 
 nav li:last-child a {
+  margin-top: 3px;
   display: block;
-  height: 100%;
-  width: 28px; }
+  height: 22px;
+  width: 22px; }
 
 .logo a {
   display: block;
@@ -5689,10 +5690,11 @@ button:hover {
   @media screen and (min-width: 30em) {
     .blurb h3, summary {
       font-size: 24px; } }
-.blurb img {
-  max-width: 50%;
-  margin-right: 12px;
-  float: left; }
+@media screen and (min-width: 30em) {
+  .blurb img {
+    margin-right: 12px;
+    max-width: 50%;
+    float: left; } }
 
 .dark .blurb h3 {
   color: #1b9ce5; }
@@ -5708,8 +5710,8 @@ button:hover {
   list-style: disc;
   padding: 2px 0; }
 
-.code-example {
-  margin-top: 100px; }
+.code-example pre {
+  white-space: pre-wrap; }
 
 .code-example > * {
   margin-bottom: 1rem; }
