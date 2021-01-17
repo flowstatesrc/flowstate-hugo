@@ -75,7 +75,7 @@ Where result is an iterator over JavaScript objects
 {"id": 1, "username": "bob", ...}
 ```
 ```json
-{"id": 2, "username":  "alice", ...}
+{"id": 2, "username": "alice", ...}
 ````
 
 Result also has some support for paging, getting total and affected row count, etc. 
@@ -171,8 +171,6 @@ async function transferBalance(ctx, fromAccount, toAccount, amount) {
   update.params["amount"] = -amount;
   await ctx.executeQuery(update);
   
-  // commit is automatic if the function returns without throwing an exception
-  // but you can make it explicit too
   await ctx.commit();  
 }
 

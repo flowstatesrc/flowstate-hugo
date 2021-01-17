@@ -216,9 +216,10 @@ footer {
 }
 // Header
 nav li:last-child a {
+	margin-top: 3px;
 	display: block;
-	height: 100%;
-	width: 28px;
+	height: 22px;
+	width: 22px;
 }
 // TODO These logo styles are a disaster
 .logo a {
@@ -294,9 +295,11 @@ button:hover {
 	}
 }
 .blurb img {
-	max-width: 50%;
-	margin-right: 12px;
-	float: left;
+	@include not-small {
+		margin-right: 12px;
+		max-width: 50%;
+		float: left;
+	}
 }
 .dark .blurb h3 {
 	color: $blue;
@@ -313,8 +316,8 @@ button:hover {
 	padding: 2px 0;
 }
 // Code examples
-.code-example {
-	margin-top: 100px;
+.code-example pre {
+	white-space: pre-wrap;
 }
 .code-example > * {
 	margin-bottom: 1rem;

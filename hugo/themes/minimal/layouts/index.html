@@ -22,11 +22,11 @@
 				</section>
 				<section>
 					<div class="content mauto">
-						<div class="flex flex-wrap flex-nowrap-ns mt4">
-							<div class="icon-box security w-100 w-50-ns">
+						<div class="flex flex-wrap flex-nowrap-ns">
+							<div class="icon-box security w-100 w-50-ns mt5">
 								{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.simple) }}
 							</div>
-							<div class="icon-box performance w-100 w-50-ns ml4-ns">
+							<div class="icon-box performance w-100 w-50-ns ml4-ns mt5">
 								{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.dashboards) }}
 							</div>
 						</div>
@@ -45,17 +45,17 @@
 				{{ partial "signup.gohtml" . }}
 				<section>
 					<div class="content mauto">
-						<div class="flex flex-wrap flex-nowrap-ns mt4">
-							<div class="icon-box graphql w-100 w-50-ns mt3">
+						<div class="flex flex-wrap flex-nowrap-ns">
+							<div class="icon-box graphql w-100 w-50-ns mt5">
 								{{ partial "blurb.gohtml" (dict "blurb" .Params.blurbs.custom) }}
 							</div>
-							<div class="icon-box github w-100 w-50-ns mt3">
+							<div class="icon-box github w-100 w-50-ns mt5">
 								{{ partial "blurb.gohtml" (dict "class" "ml3-ns" "blurb" .Params.blurbs.alerts) }}
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="full-width mv5">
+				<section class="full-width mt5">
 					<div class="content code-example mauto">
 						{{ .Content }}
 					</div>
