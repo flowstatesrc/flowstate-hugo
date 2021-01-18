@@ -238,3 +238,29 @@ We also log fetch requests and responses, along with how long they take, which
 really can speed up debugging issues with third-party integrations or identifying
 performance bottlenecks. You can see at a glance when a third-party dependency goes
 down and hold them accountable to their SLAs. These logs can be disabled in the configuration.
+
+### Use the right tool for the job
+
+We gave you lots of reasons why you should give Flow State a try, but in the spirit of
+radical transparency, which is a guiding principal for us, it's also important to talk
+about where it may not the right tool for the job.
+
+If you are publishing an API for third parties to use, then your backend _is_ the product. In
+that case you don't want to use SQL queries directly from the frontend because they're harder
+to make backwards compatible - and the REST API for developers not using Flow State would
+be awkward. The function call API produces a fairly sensible REST API, but it still doesn't
+give you the discoverability of GraphQL or the flexibility of REST - and backwards compatibility
+is still an issue. In the future perhaps you could make a solid case for Flow State once our 
+operations, debugging, and deployment story is as smooth as we want to to make it - but it's not there yet.
+So if your product is the backend, Flow State is likely not the right tool for the job.
+
+If you're using microservices for the backend, then having Flow State bypass the backend 
+and interact with the database directly really breaks the design encapsulation
+that you're trying to achieve. You could still use modules to architect things
+in a similar way - but that takes discipline and you'll be swimming upstream against the current.
+Microservices are a terrible idea for so many reasons, but if that's your particular hell,
+then adding Flow State to it is not going to improve things.
+
+
+
+
