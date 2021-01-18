@@ -239,7 +239,7 @@ really can speed up debugging issues with third-party integrations or identifyin
 performance bottlenecks. You can see at a glance when a third-party dependency goes
 down and hold them accountable to their SLAs. These logs can be disabled in the configuration.
 
-### Use the right tool for the job
+## Use the right tool for the job
 
 We gave you lots of reasons why you should give Flow State a try, but in the spirit of
 radical transparency, which is a guiding principal for us, it's also important to talk
